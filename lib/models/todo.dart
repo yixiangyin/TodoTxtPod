@@ -19,4 +19,19 @@ class Todo {
       completed: json['completed'],
     );
   }
+  factory Todo.fromTxt(String txt) {
+    bool completed = false;
+    String title = txt;
+    if (txt.startsWith("x ")) {
+      completed = true;
+      title = txt.substring(2);
+    }
+
+    return Todo(
+      userId: 0, // TODO
+      id: 0,
+      title: title,
+      completed: completed,
+    );
+  }
 }

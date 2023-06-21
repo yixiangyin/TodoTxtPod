@@ -12,11 +12,14 @@ class HTTPTodoRepository implements TodoRepository {
   @override
   Future<List<Todo>> getTodos() async {
     final response =
-        await http.get(Uri.parse("https://yixiangyin.solidcommunity.net/public/todo.json"));
+        await http.get(Uri.parse("https://yixiangyin.solidcommunity.net/public/todo.txt"));
 
     if (response.statusCode == 200) {
-      Iterable l = json.decode(response.body);
-      List<Todo> todos = List<Todo>.from(l.map((model) => Todo.fromJson(model)));
+      // Iterable l = json.decode(response.body);
+      List<String> l = response.body.split("\n");
+
+
+      List<Todo> todos = List<Todo>.from(l.map((model) => Todo.fromTxt(model)));
           // List<Todo>.from(l.map((model) => Todo.fromJson(model)));
           
 
