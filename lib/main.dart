@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
           appBarTheme: const AppBarTheme(
@@ -138,9 +139,9 @@ class _TodoListState extends State<TodoList> {
               itemCount: todoList.length,
               padding: const EdgeInsets.all(16.0),
               itemBuilder: (context, i) {
-                final index = i ~/ 2;
+                final index = i;
                 final todoObj = todoList[index];
-                if (i.isOdd) return const Divider();
+                // if (i.isOdd) return const Divider();
                 // if (todoList[index].completed) {
                 //   setState(() {
                 //     _doneList.add(todoList[index]);
