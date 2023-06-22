@@ -1,3 +1,4 @@
-# fetch_todolist_http_flutter
+# TodoTxtPod
+A todoTxt application with [Solid](https://solidproject.org/) at the backend.
+- The text file conforms to this [format](https://github.com/todotxt/todo.txt).
 
-A new Flutter project.
